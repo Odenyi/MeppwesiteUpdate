@@ -44,7 +44,7 @@
     <header id="home">
       <nav class="navbar fixed-top navbar-expand-lg navbar-light">
         <div class="container-fluid">
-          <a href="index.html" class="navbar-brand" style="position: center;"><img src="../images/mepplogo3.png" alt="logo" height="52" width="52"class="img-fluid"></a>
+          <a href="index.html" class="navbar-brand"><img src="../images/mepplogo3.png" alt="logo" height="52" width="52"class="img-fluid"></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
             <span class="toggle-icon"><i class="navbar-toggler-icon"></i></span>
           </button>

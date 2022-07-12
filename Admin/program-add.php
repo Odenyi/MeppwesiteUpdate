@@ -8,7 +8,7 @@ include"../dbconnect.php";
 <head>
 
     <meta charset="utf-8" />
-    <title>Add Product | Upbond - Admin & Dashboard Template</title>
+    <title>Add Service | MEPP - Admin & Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesdesign" name="author" />
@@ -38,123 +38,6 @@ include"../dbconnect.php";
    <?php
     echo $header;
    ?>
-    <!-- ========== Left Sidebar Start ========== -->
-    <div class="vertical-menu">
-
-    <div data-simplebar class="h-100">
-
-        <!--- Sidemenu -->
-        <div id="sidebar-menu">
-            <!-- Left Menu Start -->
-            <ul class="metismenu list-unstyled" id="side-menu">
-                <li class="menu-title">Menu</li>
-
-                <li>
-                    <a href="index.html" class="waves-effect">
-                        <i class="ri-dashboard-line"></i><span class="badge rounded-pill bg-success float-end">3</span>
-                        <span>Dashboard</span>
-                    </a>
-                </li>
-            
-                <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="ri-store-2-line"></i>
-                        <span>Blogs</span>
-                    </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="ecommerce-products.php">Blogs</a></li>
-                        <li><a href="ecommerce-customers.php">Add Blog</a></li>
-                        <li><a href="ecommerce-add-product.php">Add details form</a></li>
-                    </ul>
-                </li>
-                <!-- end li -->
-                <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="ri-store-2-line"></i>
-                        <span>Swiper Images</span>
-                    </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="ecommerce-products.php">swiper Images</a></li>
-                        <li><a href="ecommerce-customers.php">Add Swiper Image</a></li>
-                        <li><a href="ecommerce-add-product.php">Add details Image form</a></li>
-                    </ul>
-                </li>
-                <!-- end li -->
-                <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="ri-store-2-line"></i>
-                        <span>Our services</span>
-                    </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="ecommerce-products.php">Services</a></li>
-                        <li><a href="ecommerce-customers.ph">Edit Services</a></li>
-                        <li><a href="ecommerce-add-product.php">Add details form</a></li>
-                    </ul>
-                </li>
-                <!-- end li -->
-
-                <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="ri-store-2-line"></i>
-                        <span>Programs upload</span>
-                    </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="ecommerce-products">Programs Advertised</a></li>
-                        <li><a href="ecommerce-customers">Add Programs</a></li>
-                        <li><a href="ecommerce-add-product">Add details form</a></li>
-                    </ul>
-                </li>
-                <!-- end li -->
-            
-
-            
-                
-            
-                <li class="menu-title">Components</li>
-
-                <li>
-                    <a href="javascript: void(0);" class="waves-effect">
-                        <i class="ri-eraser-fill"></i>
-                        <span class="badge rounded-pill bg-danger float-end">6</span>
-                        <span>Forms</span>
-                    </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="form-elements.html">Form Elements</a></li>
-                        <li><a href="form-validation.html">Form Validation</a></li>
-                        <li><a href="form-advanced.html">Form Advanced Plugins</a></li>
-                        <li><a href="form-editors.html">Form Editors</a></li>
-                        <li><a href="form-uploads.html">Form File Upload</a></li>
-                        <li><a href="form-xeditable.html">Form X-editable</a></li>
-                        <li><a href="form-wizard.html">Form Wizard</a></li>
-                        <li><a href="form-mask.html">Form Mask</a></li>
-                    </ul>
-                    <!-- end ul -->
-                </li>
-                <!-- end li -->
-                <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="ri-table-2"></i>
-                        <span>Tables</span>
-                    </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="tables-basic.html">Basic Tables</a></li>
-                        <li><a href="tables-datatable.html">Data Tables</a></li>
-                        <li><a href="tables-responsive.html">Responsive Table</a></li>
-                        <li><a href="tables-editable.html">Editable Table</a></li>
-                    </ul>
-                    <!-- end ul -->
-                </li>
-                <!-- end li -->
-            
-            </ul>
-            <!-- end ul -->
-        </div>
-        <!-- Sidebar -->
-    </div>
-    </div>
-    <!-- Left Sidebar End -->
-    
-
     <!-- ============================================================== -->
     <!-- Start right Content here -->
     <!-- ============================================================== -->

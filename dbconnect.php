@@ -423,7 +423,7 @@ $header ='    <!-- <body data-layout="horizontal" data-topbar="dark"> -->
                     <li class="menu-title">Menu</li>
 
                     <li>
-                        <a href="index.html" class="waves-effect">
+                        <a href="index.php" class="waves-effect">
                             <i class="ri-dashboard-line"></i><span class="badge rounded-pill bg-success float-end">3</span>
                             <span>Dashboard</span>
                         </a>
@@ -435,9 +435,9 @@ $header ='    <!-- <body data-layout="horizontal" data-topbar="dark"> -->
                             <span>Blogs</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="ecommerce-products.php">Blogs</a></li>
-                            <li><a href="ecommerce-customers.php">Add Blog</a></li>
-                            <li><a href="ecommerce-add-product.php">Add details form</a></li>
+                            <li><a href="blog.php">Blogs</a></li>
+                            <li><a href="blog-edit.php">Add Blog</a></li>
+                            <li><a href="blog-add.php">Add details form</a></li>
                         </ul>
                     </li>
                     <!-- end li -->
@@ -447,9 +447,9 @@ $header ='    <!-- <body data-layout="horizontal" data-topbar="dark"> -->
                             <span>Swiper Images</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="ecommerce-products.php">swiper Images</a></li>
-                            <li><a href="ecommerce-customers.php">Add Swiper Image</a></li>
-                            <li><a href="ecommerce-add-product.php">Add details Image form</a></li>
+                            <li><a href="swiper.php">swiper Images</a></li>
+                            <li><a href="swiper-edit.php">Add Swiper Image</a></li>
+                            <li><a href="swiper-add.php">Add details Image form</a></li>
                         </ul>
                     </li>
                     <!-- end li -->
@@ -459,9 +459,9 @@ $header ='    <!-- <body data-layout="horizontal" data-topbar="dark"> -->
                             <span>Our services</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="ecommerce-products.php">Services</a></li>
-                            <li><a href="ecommerce-customers.ph">Edit Services</a></li>
-                            <li><a href="ecommerce-add-product.php">Add details form</a></li>
+                            <li><a href="service.php">Services</a></li>
+                            <li><a href="service-edit.php">Edit Services</a></li>
+                            <li><a href="service-add.php">Add details form</a></li>
                         </ul>
                     </li>
                     <!-- end li -->
@@ -472,9 +472,9 @@ $header ='    <!-- <body data-layout="horizontal" data-topbar="dark"> -->
                             <span>Programs upload</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="ecommerce-products">Programs Advertised</a></li>
-                            <li><a href="ecommerce-customers">Add Programs</a></li>
-                            <li><a href="ecommerce-add-product">Add details form</a></li>
+                            <li><a href="program.php">Programs Advertised</a></li>
+                            <li><a href="program-edit.php">Add Programs</a></li>
+                            <li><a href="program-add.php">Add details form</a></li>
                         </ul>
                     </li>
                     <!-- end li -->
