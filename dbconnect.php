@@ -533,8 +533,15 @@ try {
     // $conn = new PDO("mysql:host=$servername;dbname=myDB", $username, $password);
     // set the PDO error mode to exception
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "Connected successfully";
+    
 }catch(PDOException $e) {
     echo "Connection failed: " . $e->getMessage()."<br>";
   }
+  $mepp_blog = $pdo->prepare("SELECT * FROM blogs order by date DESC LIMIT 6");
+    $mepp_blog->execute();
+    $row_mepp_blog = $mepp_blog->fetchAll(PDO::FETCH_OBJ);
+
+    $mepp_blogrecent = $pdo->prepare("SELECT * FROM blogs order by date DESC LIMIT 3");
+    $mepp_blogrecent->execute();
+    $row_mepp_blogrecent = $mepp_blogrecent->fetchAll(PDO::FETCH_OBJ);
   ?>

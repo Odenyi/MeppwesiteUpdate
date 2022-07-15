@@ -2,29 +2,23 @@
 include"../dbconnect.php";
 $nameErr=$categoryErr=$descriptionErr="";
 $category=$name=$description="";
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ( isset( $_POST['blogname'] ) ||isset( $_POST['category'] )||isset( $_POST['description'] ))
     { 
     if (empty($_POST["blogname"])) {
         $nameErr = "Name is required";
       } 
-      if (empty($_POST["category"])) 
+      elseif (empty($_POST["category"])) 
       {
         $categoryErr = "Category is required";
       } 
       
-      if (empty($_POST["description"])) {
+      elseif(empty($_POST["description"])) {
         $descriptionErr = "Description is required";
       } 
-      
-        // Get file info 
-        $filename = $_FILES["file"];
-        print_r($filename);
-        $tempname = $_FILES["image"]["tmp_name"];
-        $folder = "assests/image/blogimages" . $filename;
-         
-        
-    
+          
+    else{
       $datetime = date('d-m-y h:i:s');
       $sql = "INSERT INTO `blogs` (name, services, description, imagepath, date)  VALUES (:name, :services, :description, :image_path,:date)";
       $stmt = $pdo->prepare($sql);
@@ -37,11 +31,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $name = test_input($_POST["blogname"]);
       $category = test_input($_POST["category"]);
       $description = test_input($_POST["description"]);
-      $image_path = $filename;
+      $image_path = "assests/images/blogimages/blog1.jpeg";
       $date = $datetime;
       $stmt->execute();
    
       }
+    }
     }
   
   
@@ -158,12 +153,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                                             <select class="form-control select2" name="category">
                                                                 <option><?php echo $category?></option>
                                                                 <option value="Bulk SMS">Bulk SMS</option>
-                                                                <option value="SS">Subscription Shortcodes</option>
+                                                                <option value="Subscription Shortcodes">Subscription Shortcodes</option>
                                                                 <option value="IVR">IVR</option>
                                                                 <option value="USSD">USSD</option>
-                                                                <option value="MPI">Mobile Payments Integrations</option>
-                                                                <option value="SD">Software Development</option>
-                                                                <option value="DA">Data Analytics</option>
+                                                                <option value="Mobile Payments Integrations">Mobile Payments Integrations</option>
+                                                                <option value="oftware Development">Software Development</option>
+                                                                <option value="Data Analytics">Data Analytics</option>
                                                             </select>
                                                             <span class="error"> *<?php echo $categoryErr;?></span>
                                                         </div>
@@ -186,6 +181,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" class="dropzone" id="form2" enctype="multipart/form-data">
                                                 <div class="fallback">
                                                     <input name="file" type="file"/>
+                                                    
                                                 </div>
 
                                                 <div class="dz-message needsclick">
@@ -194,6 +190,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                                     </div>
 
                                                     <h4>Drop files here or click to upload.</h4>
+                                                  
                                                 </div>
                                             </form>
                                             <div class="text-center mt-4">

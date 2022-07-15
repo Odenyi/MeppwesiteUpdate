@@ -1,4 +1,21 @@
-﻿<!DOCTYPE html>
+﻿<?php
+require_once "../dbconnect.php";
+ if (isset($_GET['id'])){
+$mepp_singleblog = $pdo->prepare("SELECT * FROM blogs WHERE id = :id");
+$mepp_singleblog ->bindParam(':id', $id);
+$id = $_GET['id'];
+$mepp_singleblog->execute();
+$row_mepp_blog = $mepp_singleblog->fetch(); 
+$date = strtotime( $row_mepp_blog["date"]);
+$mysqldate = date( 'F-d-Y', $date );
+$mysqltime = date( 'H:i:s', $date );
+
+ }
+ else{
+	header('blog_grid_2.php');
+ }
+?>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -102,29 +119,29 @@
 				<div class="col-lg-9 col-md-8 col-12">
 					<div class="blog-post mb-30">
 						<div class="entry-image clearfix">
-							<img class="img-fluid" src="../images/dataanalytics (1).png" alt="">
+							<img class="img-fluid" src="<?php echo "../images/$row_mepp_blog[imagepath]";?>" alt="">
 						</div>
 						<div class="blog-detail">
 							<div class="entry-meta mb-10">
 								<ul class="list-unstyled">
-									<li><a href="#"><i class="fa fa-folder-open-o"></i> Design</a></li>
-									<li><a href="#"><i class="fa fa-comment-o"></i> 5</a></li>
-									<li><a href="#"><i class="fa fa-calendar-o"></i> 12 Aug 2020</a></li>
+									<li><a href="#"><i class="fa fa-folder-open-o"></i> <?php echo $row_mepp_blog['services'];?></a></li>
+									<li><a href="#"><i class="fa fa-comment-o"></i> <?php echo $mysqltime;?></a></li>
+									<li><a href="#"><i class="fa fa-calendar-o"></i><?php echo $mysqldate;?></a></li>
 								</ul>
 							</div>
 							<hr>
 							<div class="entry-title mb-10">
-								<a href="#" class="fs-24">Blogpost With Image</a>
+								<a href="#" class="fs-24"><?php echo $row_mepp_blog['name'];?></a>
 							</div>
 							<div class="entry-content">
-								<p>It is used every day in all types of businesses; Email newsletters, websites, print and online advertisements, presentations, social media updates, flyers, and brochures; the list goes on and on</p>
+								<p><?php echo $row_mepp_blog['description'];?></p>
 								<p>David Ogilvy, the advertising legend once said that, On average, five times as many people read the headline as read the body copy. When you have written your headline, you have spent eighty cents out of your dollar." As Ogilvy points out, your headline is the first (and sometimes the only) thing that your audience will read.</p>
 								<p>You just need to enter the keyword and select the keyword type to generate a list of 6 title ideas and suggestions. If you’re not satisfied with the results, you can always hit the refresh button to generate a new list of unique titles.</p>
 								<p>Once you’ve gotten all the titles and have chosen the best one, the next thing you need to do is to craft a magnetic content. Great content marketers excel at creating content that their readers crave, but even the best struggle with delivering content to the right person at the right time.</p>
 							</div>	
 							  <blockquote class="blockquote mt-20 pb-0 mb-0">
-								  <p>Hendrerit facilisis ex in dignissim. Suspendisse tellus magna, mollis venenatis mi sit amet, laoreet cursus ligula. Aenean non sapien risus. Pellentesque ac iaculis lacus. Nullam consequat porttitor lectus pharetra </p>
-								  <footer class="blockquote-footer">John Watson <cite title="Source Title">Miami</cite></footer>
+								  <p>MEPP Communications Ltd is a good balance of being small enough to get to know a lot of colleagues whilst big enough to be an exciting place to work, with a variety of projects to get involved in. It’s a professional place to work without being too corporate. People are friendly and always supportive and willing to help one another. </p>
+								  <footer class="blockquote-footer">Mepp Comm<cite title="Source Title"> Riara</cite></footer>
 							  </blockquote>	
 						</div>
 					</div>
@@ -143,61 +160,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="box">
-						<div class="box-body">
-							<div class="blog-comment">
-								<h4 class="mt-0 pb-15 mb-25 bb-1">04 Comments</h4>
-								<div class="comment-1">
-									<div class="comment-photo">
-										<img class="img-fluid" src="../images/front-end-img/avatar/1.jpg" alt="">
-									</div>
-									<div class="comment-info">
-										<h4 class="theme-color"> Kevin Martin <span>Sep 15, 2020</span></h4>
-										<div class="port-post-social float-end">
-											<a href="#">Reply</a>
-										</div>
-										<p>Sit amet nibh vulputate cursus a sit amet mauris lorem ipsum dolor sit amet of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio <a href="#">http://themeforest.net</a> Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat </p>
-									</div>
-								</div>
-								<div class="comment-1 comment-2">
-									<div class="comment-photo">
-										<img class="img-fluid" src="../images/front-end-img/avatar/2.jpg" alt="">
-									</div>
-									<div class="comment-info">
-										<h4 class="theme-color"> Kevin Martin <span>Sep 15, 2020</span></h4>
-										<div class="port-post-social float-end">
-											<a href="#">Reply</a>
-										</div>
-										<p>Vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor Lorem ipsum dolor sit amet of Lorem Ipsum. Proin gravida nibh..</p>
-									</div>
-								</div>
-								<div class="comment-1 comment-2">
-									<div class="comment-photo">
-										<img class="img-fluid" src="../images/front-end-img/avatar/3.jpg" alt="">
-									</div>
-									<div class="comment-info">
-										<h4 class="theme-color"> Kevin Martin <span>Sep 15, 2020</span></h4>
-										<div class="port-post-social float-end">
-											<a href="#">Reply</a>
-										</div>
-										<p>Aenean sollicitudin, lorem quis bibendum auctor Lorem ipsum dolor sit amet of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet..</p>
-									</div>
-								</div>
-								<div class="comment-1">
-									<div class="comment-photo">
-										<img class="img-fluid" src="../images/front-end-img/avatar/4.jpg" alt="">
-									</div>
-									<div class="comment-info">
-										<h4 class="theme-color"> Kevin Martin <span>Sep 15, 2020</span></h4>
-										<div class="port-post-social float-end">
-											<a href="#">Reply</a>
-										</div>
-										<p>Bibendum auctor Lorem ipsum dolor sit amet of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris <a href="#">http://themeforest.net</a> Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat </p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+					
 					<div class="box">
 						<div class="box-body">							
 						  	<div class="widget">
@@ -271,120 +234,20 @@
 						</div>
 						<div class="widget">
 							<h4 class="pb-15 mb-25 bb-1">Recent Posts </h4>
+							<?php foreach($row_mepp_blogrecent as $blog) {?>
 							<div class="recent-post clearfix">
 								<div class="recent-post-image">
-									<img class="img-fluid bg-primary-light" src="../images/front-end-img/courses/cor-logo-1.png" alt="">
+								<a href="<?php echo "blog_single.php?id=$blog->id" ?>"><img class="img-fluid bg-primary-light" src="<?php echo "../images/$blog->imagepath";?>" alt=""></a>
 								</div>
 								<div class="recent-post-info">
-									<a href="#">Curabitur id scelerisque diam. Pellentesque ut lectus arcu.</a>
-									<span><i class="fa fa-calendar-o"></i> September 30, 2020</span>
+									<a href="<?php echo "blog_single.php?id=$blog->id" ?>"><?php echo $blog->name ?></a>
+									<span><i class="fa fa-calendar-o"></i> <?php echo date( 'F d,Y',  strtotime( $blog->date));?></span>
 								</div>
 							</div>
-							<div class="recent-post clearfix">
-								<div class="recent-post-image">
-									<img class="img-fluid bg-primary-light" src="../images/front-end-img/courses/cor-logo-5.png" alt="">
-								</div>
-								<div class="recent-post-info">
-									<a href="#">Curabitur id scelerisque diam. Pellentesque ut lectus arcu.</a>
-									<span><i class="fa fa-calendar-o"></i> September 30, 2020</span>
-								</div>
-							</div>
-							<div class="recent-post clearfix">
-								<div class="recent-post-image">
-									<img class="img-fluid bg-primary-light" src="../images/front-end-img/courses/cor-logo-4.png" alt="">
-								</div>
-								<div class="recent-post-info">
-									<a href="#">Curabitur id scelerisque diam. Pellentesque ut lectus arcu.</a>
-									<span><i class="fa fa-calendar-o"></i> September 30, 2020</span>
-								</div>
-							</div>
+							<?php } ?>							
 						</div>
-						<div class="widget">
-							<h4 class="pb-15 mb-25 bb-1">Newsletter</h4>
-							<div class="widget-newsletter">
-								<div class="newsletter-icon">
-									<i class="fa fa-envelope-o"></i>
-								</div>
-								<div class="newsletter-content">
-									<i>Fusce tincidunt, metus at dignissim fringilla, lorem velit posuere mi, sed pretium turpis leo ac metus. Aenean sit amet sapien eget eros </i>
-								</div>
-								<div class="newsletter-form mt-20">
-									<div class="form-group">
-										<input type="email" class="form-control" id="exampleInputEmail2" placeholder="Name">
-									</div>
-									<a class="btn btn-primary w-p100" href="#">Submit</a>
-								</div>
-							</div>
-						</div>
-						<div class="widget">
-							<h4 class="pb-15 mb-25 bb-1">Testimonials</h4>
-							<div class="owl-carousel" data-nav-dots="false" data-items="1" data-md-items="1" data-sm-items="1" data-xs-items="1" data-xx-items="1">
-								<div class="item">
-									<div class="testimonial-widget">
-										<div class="testimonial-content">
-											<p>In odio metus, porta vitae neque vitae, faucibus viverra orci. Quisque in lorem aliquam, ullamcorper turpis a, aliquam dui. In accumsan aliquam viverra.</p>
-										</div>
-										<div class="testimonial-info mt-20">
-											<div class="testimonial-avtar">
-												<img class="img-fluid" src="../images/front-end-img/avatar/1.jpg" alt="">
-											</div>
-											<div class="testimonial-name">
-												<strong>Johen Doe</strong>
-												<span>Project Manager</span>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="item">
-									<div class="testimonial-widget">
-										<div class="testimonial-content">
-											<p>Morbi condimentum leo eu lacinia accumsan. Phasellus cursus rhoncus elit, mattis convallis sapien efficitur non phasellus et erat sapien phasellus. </p>
-										</div>
-										<div class="testimonial-info mt-20">
-											<div class="testimonial-avtar">
-												<img class="img-fluid" src="../images/front-end-img/avatar/2.jpg" alt="">
-											</div>
-											<div class="testimonial-name">
-												<strong>Johen Doe</strong>
-												<span>Design</span>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="item">
-									<div class="testimonial-widget">
-										<div class="testimonial-content">
-											<p>In odio metus, porta vitae neque vitae, faucibus viverra orci. Quisque in lorem aliquam, ullamcorper turpis a, aliquam dui. In accumsan aliquam viverra.</p>
-										</div>
-										<div class="testimonial-info mt-20">
-											<div class="testimonial-avtar">
-												<img class="img-fluid" src="../images/front-end-img/avatar/3.jpg" alt="">
-											</div>
-											<div class="testimonial-name">
-												<strong>Johen Doe</strong>
-												<span>Project Manager</span>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="item">
-									<div class="testimonial-widget">
-										<div class="testimonial-content">
-											<p>Morbi condimentum leo eu lacinia accumsan. Phasellus cursus rhoncus elit, mattis convallis sapien efficitur non phasellus et erat sapien phasellus. </p>
-										</div>
-										<div class="testimonial-info mt-20">
-											<div class="testimonial-avtar">
-												<img class="img-fluid" src="../images/front-end-img/avatar/4.jpg" alt="">
-											</div>
-											<div class="testimonial-name">
-												<strong>Johen Doe</strong>
-												<span>Design</span>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+						
+	
 						<div class="widget mb-10">
 							<h4 class="pb-15 mb-25 bb-1">Quick contact</h4>
 							<form class="gray-form">

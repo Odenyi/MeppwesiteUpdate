@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿<?php
+include"../dbconnect.php";
+?>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -114,28 +117,29 @@
 	<section class="py-50" style="font-size:14px;">
 		<div class="container">
 			<div class="row">
+      <?php foreach($row_mepp_blog as $blog){?>
 				<div class="col-md-6 col-12">
 					<div class="blog-post">
 						<div class="entry-image clearfix">
-							<img class="img-fluid" src="../images/dataanalytics (1).png" alt="">
+							<a href="<?php echo "blog_single.php?id=$blog->id";?>"><img class="img-fluid" src="<?php echo "../images/$blog->imagepath";?>" alt=""></a>
 						</div>
 						<div class="blog-detail">
 							<div class="entry-title mb-10">
-								<a href="#">Blog Post With Image</a>
+								<a href="#"><?php echo "$blog->name";?></a>
 							</div>
 							<div class="entry-meta mb-10">
 								<ul class="list-unstyled">
-									<li><a href="#"><i class="far fa-folder-open-o" ></i> Design</a></li>
+									<li><a href="#"><i class="far fa-folder-open-o" ></i> <?php echo "$blog->services";?></a></li>
 									<li><a href="#"><i class="fas fa-comment-o"></i> 5</a></li>
 									<li><a href="#"><i class="fab fa-calendar-o"></i> 12 Aug 2020</a></li>
 								</ul>
 							</div>
 							<div class="entry-content">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus fuga laborum totam itaque architecto! Laudantium sed delectus assumenda, doloribus non.</p>
+								<p><?php echo substr_replace($blog->description, "...", 100);?></p>
 							</div>
 							<div class="entry-share d-flex justify-content-between align-items-center">
 								<div class="entry-button">
-									<a href="#" class="btn btn-primary btn-sm" style="font-size:14px;">Read more</a>
+									<a href="<?php echo "blog_single.php?id=$blog->id";?>" class="btn btn-primary btn-sm" style="font-size:14px;">Read more</a>
 								</div>
 								<div class="social">
 									<strong>Share : </strong>
@@ -157,10 +161,12 @@
 							</div>
 						</div>
 					</div>
+       
 				</div>
-				
+				<?php } ?>
 			</div>
-		</div>
+    </div>
+ 
 	</section>	
 	
 	
