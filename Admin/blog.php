@@ -1,6 +1,5 @@
 <?php
 include"../dbconnect.php";
-
 ?>
 <!doctype html>
 <html lang="en">
@@ -8,7 +7,7 @@ include"../dbconnect.php";
 <head>
 
     <meta charset="utf-8" />
-    <title>Products | Upbond - Admin & Dashboard Template</title>
+    <title>Blog | Upbond - Admin & Dashboard Template</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesdesign" name="author" />
@@ -46,12 +45,12 @@ include"../dbconnect.php";
                 <div class="row">
                     <div class="col-12">
                         <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                            <h4 class="mb-sm-0">Products</h4>
+                            <h4 class="mb-sm-0">Blog</h4>
 
                             <div class="page-title-right">
                                 <ol class="breadcrumb m-0">
-                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Ecommerce</a></li>
-                                    <li class="breadcrumb-item active">Products</li>
+                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Mepp</a></li>
+                                    <li class="breadcrumb-item active">Blog</li>
                                 </ol>
                             </div>
 
@@ -67,12 +66,10 @@ include"../dbconnect.php";
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div>
-                                                <h5>Footwear</h5>
+                                                <h5>Blogs</h5>
                                                 <ol class="breadcrumb p-0 bg-transparent mb-2">
-                                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Men
-                                                            Shoes</a></li>
-                                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Running
-                                                            Shoes</a></li>
+                                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Services</a></li>
+                                                    <li class="breadcrumb-item"><a href="javascript: void(0);"> Services</a></li>
 
                                                 </ol>
                                                 <!-- end ol -->
@@ -100,6 +97,10 @@ include"../dbconnect.php";
                                     <!-- end row -->
 
                                     <div class="row g-0">
+                                    <?php foreach($row_mepp_blog as $blog){
+                                        $date = strtotime( $blog->date);
+                                        $mysqldate = date( 'd-m-y', $date );
+                                        $mysqltime = date( 'H:i:s', $date );?>
                                         <div class="col-xl-4 col-sm-6">
                                             <div class="product-box">
                                                 <div class="product-img">
@@ -114,15 +115,15 @@ include"../dbconnect.php";
                                                             </a>
                                                         </div>
                                                     </div>
-                                                    <img src="assets/images/product/img-4.png" alt="img-1"
+                                                    <img src="<?php echo "../images/$blog->imagepath";?>" alt="img-1"
                                                         class="img-fluid mx-auto d-block">
                                                 </div>
                                                 <!-- end product-img -->
                                                 <div class="d-flex">
                                                     <div class="flex-1 ">
                                                         <h5 class="font-size-15 mt-2"><a href="#"
-                                                                class="text-dark">Jordan
-                                                                Eclipse</a></h5>
+                                                                class="text-dark"><?php echo $blog->name; ?>
+                                                                </a></h5>
                                                         <div class="">
                                                             <span class="mdi mdi-star text-warning"></span>
                                                             <span class="mdi mdi-star text-warning"></span>
@@ -132,223 +133,18 @@ include"../dbconnect.php";
                                                         </div>
                                                     </div>
                                                     <div class="">
-                                                        <h5 class="mt-3 mb-0">$299<del
-                                                                class="text-muted ms-1 font-size-13">$399</del>
-                                                        </h5>
+                                                        <h7 class="mt-3 mb-0"><?php echo $mysqldate?>
+                                                        </h7>
                                                     </div>
                                                 </div>
                                                 <!-- end d-flex -->
                                                 <button class="btn btn-soft-primary w-100 mt-3"><i
-                                                        class="mdi mdi-cart me-2 text-soft-primary"></i> Add to
-                                                    Cart</button>
+                                                        class="mdi mdi-cart me-2 text-soft-primary"></i> Edit Blog</button>
                                             </div>
                                             <!-- end product-box -->
                                         </div>
                                         <!-- end col -->
-                                        <div class="col-xl-4 col-sm-6">
-                                            <div class="product-box">
-                                                <div class="product-img">
-                                                    <div class="product-like">
-                                                        <a href="#">
-                                                            <i class="mdi mdi-heart-outline mdi-24px"></i>
-                                                        </a>
-                                                    </div>
-                                                    <img src="assets/images/product/pro-2.png" alt="img-2"
-                                                        class="img-fluid mx-auto d-block">
-                                                </div>
-                                                <!-- end product-box -->
-                                                <div class="d-flex">
-                                                    <div class="flex-1">
-                                                        <h5 class="font-size-15 mt-2"><a href="#" class="text-dark">Wool
-                                                                Runners</a></h5>
-                                                        <div class="">
-                                                            <span class="mdi mdi-star text-warning"></span>
-                                                            <span class="mdi mdi-star text-warning"></span>
-                                                            <span class="mdi mdi-star text-warning"></span>
-                                                            <span class="mdi mdi-star text-warning"></span>
-                                                            <span class="mdi mdi-star-half-full text-warning"></span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="">
-                                                        <h5 class="mt-3 mb-0">$579<del
-                                                                class="text-muted ms-1 font-size-13">$889</del>
-                                                        </h5>
-                                                    </div>
-                                                </div>
-                                                <!-- end d-flex -->
-                                                <button class="btn btn-soft-primary w-100 mt-3"><i
-                                                        class="mdi mdi-cart me-2 text-soft-primary"></i> Add to
-                                                    Cart</button>
-                                            </div>
-                                            <!-- end product-box -->
-                                        </div>
-                                        <!-- end col -->
-                                        <div class="col-xl-4 col-sm-6">
-                                            <div class="product-box">
-                                                <div class="product-img">
-                                                    <div class="position-relative">
-                                                        <div>
-                                                            <span class="product-ribbon badge bg-success">20% OFF</span>
-                                                        </div>
-                                                        <div class="product-like">
-                                                            <a href="#">
-                                                                <i class="mdi mdi-heart-outline mdi-24px"></i>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <img src="assets/images/product/pro-3.png" alt="img-3"
-                                                        class="img-fluid mx-auto d-block">
-                                                </div>
-                                                <!-- end product-img -->
-                                                <div class="d-flex">
-                                                    <div class="flex-1">
-                                                        <h5 class="font-size-15 mt-2"><a href="#"
-                                                                class="text-dark">Adidas
-                                                                (Blue)</a></h5>
-                                                        <div class="">
-                                                            <span class="mdi mdi-star text-warning"></span>
-                                                            <span class="mdi mdi-star text-warning"></span>
-                                                            <span class="mdi mdi-star text-warning"></span>
-                                                            <span class="mdi mdi-star text-warning"></span>
-                                                            <span class="mdi mdi-star text-warning"></span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="">
-                                                        <h5 class="mt-3 mb-0">$600<del
-                                                                class="text-muted ms-1 font-size-13">$850</del>
-                                                        </h5>
-                                                    </div>
-                                                </div>
-                                                <!-- end d-flex -->
-                                                <button class="btn btn-soft-primary w-100 mt-3"><i
-                                                        class="mdi mdi-cart me-2 text-soft-primary"></i> Add to
-                                                    Cart</button>
-                                            </div>
-                                            <!-- end product-box -->
-                                        </div>
-                                        <!-- end col -->
-                                        <div class="col-xl-4 col-sm-6">
-                                            <div class="product-box">
-                                                <div class="product-img">
-                                                    <div class="product-like">
-                                                        <a href="#">
-                                                            <i class="mdi mdi-heart-outline mdi-24px"></i>
-                                                        </a>
-                                                    </div>
-                                                    <img src="assets/images/product/pro-4.png" alt="img-4"
-                                                        class="img-fluid mx-auto d-block">
-                                                </div>
-                                                <!-- end product-img -->
-                                                <div class="d-flex">
-                                                    <div class="flex-1">
-                                                        <h5 class="font-size-15 mt-2"><a href="#"
-                                                                class="text-dark">Reebok
-                                                                (Gray)</a></h5>
-                                                        <div class="">
-                                                            <span class="mdi mdi-star text-warning"></span>
-                                                            <span class="mdi mdi-star text-warning"></span>
-                                                            <span class="mdi mdi-star text-warning"></span>
-                                                            <span class="mdi mdi-star text-warning"></span>
-                                                            <span class="mdi mdi-star-half-full text-warning"></span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="">
-                                                        <h5 class="mt-3 mb-0">$315<del
-                                                                class="text-muted ms-1 font-size-13">$550</del>
-                                                        </h5>
-                                                    </div>
-                                                </div>
-                                                <!-- end d-flex -->
-                                                <button class="btn btn-soft-primary w-100 mt-3"><i
-                                                        class="mdi mdi-cart me-2 text-soft-primary"></i> Add to
-                                                    Cart</button>
-                                            </div>
-                                            <!-- end product-box -->
-                                        </div>
-                                        <!-- end col -->
-                                        <div class="col-xl-4 col-sm-6">
-                                            <div class="product-box">
-                                                <div class="product-img">
-                                                    <div class="position-relative">
-                                                        <div>
-                                                            <span class="product-ribbon badge bg-danger">Sale</span>
-                                                        </div>
-                                                        <div class="product-like">
-                                                            <a href="#">
-                                                                <i class="mdi mdi-heart-outline mdi-24px"></i>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-
-                                                    <img src="assets/images/product/pro-5.png" alt="img-5"
-                                                        class="img-fluid mx-auto d-block">
-                                                </div>
-                                                <!-- end product-img -->
-                                                <div class="d-flex">
-                                                    <div class="flex-1">
-                                                        <h5 class="font-size-15 mt-2"><a href="#" class="text-dark">Nike
-                                                            </a></h5>
-                                                        <div class="">
-                                                            <span class="mdi mdi-star text-warning"></span>
-                                                            <span class="mdi mdi-star text-warning"></span>
-                                                            <span class="mdi mdi-star text-warning"></span>
-                                                            <span class="mdi mdi-star text-warning"></span>
-                                                            <span class="mdi mdi-star-outline text-warning"></span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="">
-                                                        <h5 class="mt-3 mb-0">$449<del
-                                                                class="text-muted ms-1 font-size-13">$900</del>
-                                                        </h5>
-                                                    </div>
-                                                </div>
-                                                <!-- end d-flex -->
-                                                <button class="btn btn-soft-primary w-100 mt-3"><i
-                                                        class="mdi mdi-cart me-2 text-soft-primary"></i> Add to
-                                                    Cart</button>
-                                            </div>
-                                            <!-- end product-box -->
-                                        </div>
-                                        <!-- end col -->
-                                        <div class="col-xl-4 col-sm-6">
-                                            <div class="product-box">
-                                                <div class="product-img">
-                                                    <div class="product-like">
-                                                        <a href="#">
-                                                            <i class="mdi mdi-heart-outline mdi-24px"></i>
-                                                        </a>
-                                                    </div>
-                                                    <img src="assets/images/product/img-8.png" alt="img-6"
-                                                        class="img-fluid mx-auto d-block">
-
-                                                </div>
-                                                <!-- end product-img -->
-                                                <div class="d-flex">
-                                                    <div class="flex-1">
-                                                        <h5 class="font-size-15 mt-2"><a href="#" class="text-dark">Air
-                                                                Jordan 1
-                                                                TS
-                                                            </a></h5>
-                                                        <div class="">
-                                                            <span class="mdi mdi-star text-warning"></span>
-                                                            <span class="mdi mdi-star text-warning"></span>
-                                                            <span class="mdi mdi-star text-warning"></span>
-                                                            <span class="mdi mdi-star text-warning"></span>
-                                                            <span class="mdi mdi-star-outline text-warning"></span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="">
-                                                        <h5 class="mt-3 mb-0">$210<del
-                                                                class="text-muted ms-1 font-size-13">$350</del>
-                                                        </h5>
-                                                    </div>
-                                                </div>
-                                                <!-- end d-flex -->
-                                                <button class="btn btn-soft-primary w-100 mt-3"><i
-                                                        class="mdi mdi-cart me-2 text-soft-primary"></i> Add to
-                                                    Cart</button>
-                                            </div>
-                                        </div>
+                                    <?php } ?> 
                                     </div>
                                     <!-- end row -->
                                     <div class="row mt-4">

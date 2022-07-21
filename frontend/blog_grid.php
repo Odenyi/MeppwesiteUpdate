@@ -51,23 +51,24 @@ include"../dbconnect.php";
           </button>
           <div class="collapse navbar-collapse ms-auto" id="menu">
             <ul class="navbar-nav ms-auto">
-              <li class="nav-item "><a class="nav-link js-scroll-trigger active" href="#home">Home</a></li>
+              <li class="nav-item "><a class="nav-link js-scroll-trigger" href=".../index.html">Home</a></li>
               <li class="nav-item dropdown"><a class="nav-link  dropdown-toggle" href="#" id="Click" role="menu"
                 data-bs-toggle="dropdown"  aria-expanded="false">About</a>
                 <ul class="dropdown-menu" aria-labelledby="Click">
-                  <a class="dropdown-item js-scroll-trigger" href="#about">About</a>
-                  <a class="dropdown-item" href="aboutus.html">About Us</a>
+                  <a class="dropdown-item js-scroll-trigger" href=".../index.html#about">About</a>
+                  <a class="dropdown-item" href=".../aboutus.html">About Us</a>
                 </ul>
               </li>
               <li class="nav-item dropdown"><a class="nav-link  dropdown-toggle" href="#" id="Click" role="menu"
                 data-bs-toggle="dropdown"  aria-expanded="false">Careers</a>
                 <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="Click">
                   <a class="dropdown-item js-scroll-trigger" href="#Careers">Careers</a>
-                  <a class="dropdown-item" href="careers.html">Graduates Programmes</a>
-                  <a class="dropdown-item" href="careers.html">Experienced Candidates</a>
+                  <a class="dropdown-item" href=".../careers.html">Graduates Programmes</a>
+                  <a class="dropdown-item" href=".../careers.html">Experienced Candidates</a>
                 </ul>
               </li>
-              <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#pack">Our Services</a></li>
+              <li class="nav-item "><a class="nav-link js-scroll-trigger active" href="#">Blogs</a></li>
+              <li class="nav-item"><a class="nav-link js-scroll-trigger" href=".../index.html#pack">Our Services</a></li>
               <li class="nav-item dropdown"><a class="nav-link  dropdown-toggle" href="#" id="Click" role="menu"
                 data-bs-toggle="dropdown"  aria-expanded="false">Developers</a>
                 <ul class="dropdown-menu" id="developers" aria-labelledby="Click">

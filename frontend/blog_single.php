@@ -45,9 +45,6 @@ $mysqltime = date( 'H:i:s', $date );
 	<!-- Vendors Style-->
 	<link rel="stylesheet" href="css/vendors_css.css">
 	  
-	<!-- Style-->  
-	<!-- <link rel="stylesheet" href="css/style1.css"> -->
-	<!-- <link rel="stylesheet" href="css/style.css"> -->
 	<link rel="stylesheet" href="css/skin_color.css">
 
     <title>Mepp Communications Limited</title> 
@@ -67,7 +64,7 @@ $mysqltime = date( 'H:i:s', $date );
           </button>
           <div class="collapse navbar-collapse ms-auto" id="menu">
             <ul class="navbar-nav ms-auto">
-              <li class="nav-item "><a class="nav-link js-scroll-trigger active" href="#home">Home</a></li>
+              <li class="nav-item "><a class="nav-link js-scroll-trigger" href="#home">Home</a></li>
               <li class="nav-item dropdown"><a class="nav-link  dropdown-toggle" href="#" id="Click" role="menu"
                 data-bs-toggle="dropdown"  aria-expanded="false">About</a>
                 <ul class="dropdown-menu" aria-labelledby="Click">
@@ -79,10 +76,11 @@ $mysqltime = date( 'H:i:s', $date );
                 data-bs-toggle="dropdown"  aria-expanded="false">Careers</a>
                 <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="Click">
                   <a class="dropdown-item js-scroll-trigger" href="#Careers">Careers</a>
-                  <a class="dropdown-item" href="careers.html">Graduates Programmes</a>
-                  <a class="dropdown-item" href="careers.html">Experienced Candidates</a>
+                  <a class="dropdown-item" href=".../careers.html">Graduates Programmes</a>
+                  <a class="dropdown-item" href=".../careers.html">Experienced Candidates</a>
                 </ul>
               </li>
+			  <li class="nav-item "><a class="nav-link js-scroll-trigger active" href="blog_grid.php">Blogs</a></li>
               <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#pack">Our Services</a></li>
               <li class="nav-item dropdown"><a class="nav-link  dropdown-toggle" href="#" id="Click" role="menu"
                 data-bs-toggle="dropdown"  aria-expanded="false">Developers</a>
@@ -94,7 +92,7 @@ $mysqltime = date( 'H:i:s', $date );
                  <li><a class="dropdown-item" href="https://vas.meppcommunications.com/site/register" target="blank">Mobile Intergrations</a></li>
                 </ul>
               </li>
-              <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
+              <li class="nav-item"><a class="nav-link js-scroll-trigger" href=".../index.html#contact">Contact</a></li>
               <li class="nav-item">
                 <div class="num">
                   <span><i class="fas fa-headset"></i></span>
@@ -368,7 +366,7 @@ $mysqltime = date( 'H:i:s', $date );
 		<div class="footer-bottom bg-dark3">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-md-6 col-12 text-md-start text-center"> © 2020 <span class="text-white">EduAdmin</span>  All Rights Reserved.</div>
+                    <div class="col-md-6 col-12 text-md-start text-center"> © <script>document.write(new Date().getFullYear())</script> <span class="text-white">Mepp</span>  All Rights Reserved.</div>
 					<div class="col-md-6 mt-md-0 mt-20">
 						<div class="social-icons">
 							<ul class="list-unstyled d-flex gap-items-1 justify-content-md-end justify-content-center">

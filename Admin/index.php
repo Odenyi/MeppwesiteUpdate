@@ -1,5 +1,13 @@
 <?php
-include"../dbconnect.php";
+require"../dbconnect.php";
+session_start();
+
+if (!isset($_SESSION['userName'])){
+        header('location: ../AdminLogin/index.php');
+    }
+	$user_detail = fetchDB('users', 'name', $_SESSION['userName']);
+	$image = $user_detail->photo;
+?>
 ?>
 <!doctype html>
 <html lang="en">

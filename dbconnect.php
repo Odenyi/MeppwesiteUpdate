@@ -3,7 +3,7 @@ $host = 'localhost';
 $user = 'root';
 $password = '';
 $dbname = 'meppwebsite';
-
+ $image ="";
 $header ='    <!-- <body data-layout="horizontal" data-topbar="dark"> -->
 
 <!-- Begin page -->
@@ -379,7 +379,7 @@ $header ='    <!-- <body data-layout="horizontal" data-topbar="dark"> -->
                 <div class="dropdown d-inline-block user-dropdown">
                     <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-7.jpg"
+                        <img class="rounded-circle header-profile-user" src="../images/'.$image.' ?>"
                             alt="Header Avatar">
                         <span class="d-none d-xl-inline-block ms-1">Malvika</span>
                         <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
@@ -537,11 +537,23 @@ try {
 }catch(PDOException $e) {
     echo "Connection failed: " . $e->getMessage()."<br>";
   }
+//   all blog posts
   $mepp_blog = $pdo->prepare("SELECT * FROM blogs order by date DESC LIMIT 6");
     $mepp_blog->execute();
     $row_mepp_blog = $mepp_blog->fetchAll(PDO::FETCH_OBJ);
 
+     // side items on single blog post 
     $mepp_blogrecent = $pdo->prepare("SELECT * FROM blogs order by date DESC LIMIT 3");
     $mepp_blogrecent->execute();
     $row_mepp_blogrecent = $mepp_blogrecent->fetchAll(PDO::FETCH_OBJ);
+    
+        // fetch data from db function
+    function fetchDB($table, $column, $value){
+        $stmt = $GLOBALS['pdo']->prepare("SELECT * FROM $table WHERE $column = ?");
+        $stmt->execute([$value]);
+        $row = $stmt->fetch(PDO::FETCH_OBJ);
+      
+        return $row;
+      }
+
   ?>
