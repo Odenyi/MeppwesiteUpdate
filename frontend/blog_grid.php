@@ -126,7 +126,7 @@ include"../dbconnect.php";
 						</div>
 						<div class="blog-detail">
 							<div class="entry-title mb-10">
-								<a href="#"><?php echo "$blog->name";?></a>
+								<a href="#"><strong><?php echo "$blog->name";?></strong></a>
 							</div>
 							<div class="entry-meta mb-10">
 								<ul class="list-unstyled">
@@ -280,7 +280,7 @@ include"../dbconnect.php";
 	
 	<!-- Corenav Master JavaScript -->
     <script src="corenav-master/coreNavigation-1.1.3.js"></script>
-    <script src="js/nav.js"></script>
+    <!-- <script src="js/nav.js"></script> -->
 	<!-- <script src="../assets/vendor_components/bootstrap-select/dist/js/bootstrap-select.js"></script>
 	<script src="../assets/vendor_components/OwlCarousel2/dist/owl.carousel.js"></script> -->
 	

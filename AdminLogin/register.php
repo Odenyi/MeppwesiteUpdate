@@ -31,9 +31,8 @@ if(isset($_POST['signup'])){
             $Err = '<span x-data ="{display:true}" x-init = "setTimeout(() => display = false,3000)" x-show ="display" class="alert alert-sm alert-success mb-4">Thank you for signing up with us. An email will be sent to you once your account has been verified</span>';
         }
     }else{
-        $Err = "<span class='alert alert-sm alert-danger mb-4'>Error!! The passwords do not match</span>";
-        // $Err = "<span class='alert alert-sm alert-info mb-4'>Thank you $name for signing up with us.</span>";
-        // $Err = "<span class='alert alert-sm alert-info mb-4'>Thank you for signing up with us. An email will be sent to you once your account has been verified</span>";
+        $Err = '<span class="alert alert-sm alert-danger mb-4"x-data ="{display:true}" x-init = "setTimeout(() => display = false,3000)" x-show ="display">Error!! The passwords do not match</span>';
+        
     }
 }
 }

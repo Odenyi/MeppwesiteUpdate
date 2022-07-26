@@ -21,10 +21,10 @@ if (isset($_POST['login'])){
 				
 			}else{
 				
-				$Err = "<span class='alert alert-sm alert-danger mb-4'>You have entered the wrong password</span>";
+				$Err =  '<span class="alert alert-sm alert-danger mb-4" x-data ="{display:true}" x-init = "setTimeout(() => display = false,3000)" x-show ="display">You have entered a wrong password</span>';
 			}
 		}else{
-				$Err = "<span class='alert alert-sm alert-warning mb-4'>Just a little longer. Your account is still under review</span>";
+				$Err = '<span class="alert alert-sm alert-warning mb-4" x-data ="{display:true}" x-init = "setTimeout(() => display = false,3000)" x-show ="display">Just a little longer. Your account is still under review</span>';
 			}
 	}
 }
@@ -47,12 +47,16 @@ if (isset($_POST['login'])){
     <!-- Style -->
     <link rel="stylesheet" href="css/style.css">
 
+     <!-- alpine js for flash messages -->
+     <script src="//unpkg.com/alpinejs" defer></script>
+
     <title>Login #5</title>
   </head>
   <body>
     <?php if(!empty($Err)){
       echo $Err;
     } ?>
+    
 
   <div class="d-md-flex half">
     <div class="bg" style="background-image: url('images/bg_1.jpg');"></div>
